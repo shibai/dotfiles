@@ -4,6 +4,8 @@
 # functions, options, key bindings, etc.
 #
 
+source ~/.zshrc-local
+
 #set timezone
 TZ=GB; export TZ;
 
@@ -24,7 +26,6 @@ setopt NO_BEEP
 
 autoload -U colors
 colors
-PROMPT=$PROMPT"%{fg[green]%}"
 
 #colors for vim
 export TERM=xterm-256color
@@ -86,7 +87,6 @@ tabname () {
 #	popd $1 > /dev/null
 #}
 
-source ~/.zshrc-local
 
 echo "\n\nHERE IS A PICTURE OF A CAT:\n"
 cat-art

@@ -23,7 +23,6 @@ setopt NO_BEEP
 
 autoload -U colors
 colors
-PROMPT=$PROMPT"%{fg[green]%}"
 
 export PATH=/apollo/env/eclipse-4.2/eclipse:/home/jackjack/.env/bin:/home/jackjack/bin:$PATH:
 #/rhel5pdi/apollo/package/local_1/Linux-2.6c2.5-x86_64/Python/Python-151.0-0/lib/python2.6/site-packages
