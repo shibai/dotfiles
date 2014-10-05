@@ -1,0 +1,17 @@
+.*
+.git
+.classpath
+.project
+.settings/**
+build
+coral-generated-src/
+eclipse-bin/
+var/
+.settings/org.eclipse.jdt.core.prefs
+bin/
+apollo-overrides
+.settings/*
+*.iml
+velocity.log
+*.log
+*.pyc
