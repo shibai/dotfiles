@@ -6,3 +6,5 @@ export ORACLE_VERSION=11.2.2
 export ORACLE_HOME="/Users/jackjack/Development/oracle/instantclient_11_2_2"
 export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export LD_LIBRARY_PATH=$ORACLE_HOME
+
+source ~/.env/zshrc
