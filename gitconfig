@@ -1,0 +1,7 @@
+[user]
+	name = Jack Jackson
+	email = jackjack@amazon.com
+[push]
+	default = simple
+[core]
+	pager = less -R
