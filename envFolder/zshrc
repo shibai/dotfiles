@@ -1,6 +1,6 @@
 local SCRIPT=$0
 #local SCRIPT_DIR=${SCRIPT%/*}
-local SCRIPT_DIR="/Users/jackjack/.env"
+local SCRIPT_DIR="$HOME/.env"
 
 declare -Ua precmd_functions
 declare -Ua chpwd_functions
