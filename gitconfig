@@ -2,7 +2,7 @@
 	name = Jack Jackson
 	email = jackjack@amazon.com
 [push]
-	default = simple
+	default = current
 [core]
 	pager = less -R
 [alias]
