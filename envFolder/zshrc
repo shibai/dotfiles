@@ -1,0 +1,117 @@
+local SCRIPT=$0
+#local SCRIPT_DIR=${SCRIPT%/*}
+local SCRIPT_DIR="/Users/jackjack/.env"
+
+declare -Ua precmd_functions
+declare -Ua chpwd_functions
+export chpwd_functions
+
+export PATH=$PATH:~/.env/bin
+
+function reload_env() {
+    source ~/.env/zshrc
+}
+
+function reload_env_hard() {
+    PROMPT=
+    RPROMPT=
+    PROMPT_CORE=
+    RPROMPT_CORE=
+    source ~/.zshrc
+}
+
+if [[ -z $PROMPT_CORE ]]; then
+    PROMPT_CORE=$PROMPT
+    RPROMPT_CORE=$RPROMPT
+fi
+
+source $SCRIPT_DIR/zsh/git.zsh
+source $SCRIPT_DIR/zsh/brazil.zsh
+
+setopt prompt_subst
+
+#Original
+#function get_prompt() {
+#    echo -n "["
+#    echo -n "%{$fg[yellow]%}$(brazil_workspace_dir)%{$reset_color%}"
+#    echo -n ":"
+#    echo -n "%{$fg[magenta]%}%B$(brazil_package)%b%{$reset_color%}"
+#    echo -n "/"
+#    echo -n "$(brazil_package_local_path)"
+#    echo "]"
+#
+#    echo "%B%{$fg[cyan]%}%* @%m]%{$reset_color%}%b "
+#    #echo $PROMPT_CORE
+#}
+
+function get_prompt() {
+    echo -n "["
+    echo -n "%{$fg[yellow]%}$(brazil_workspace_dir)%{$fg[white]%}"
+    echo -n ":"
+    echo -n "%{$fg[magenta]%}%B$(brazil_package)%b%{$fg[white]%}"
+    echo -n "/"
+    echo -n "$(brazil_package_local_path)"
+    echo "]"
+
+    echo "%B%{$fg[cyan]%}%* @%m]%{$reset_color%}%b "
+    #echo $PROMPT_CORE
+}
+
+function color_dump() {
+    foreach c (${(k)fg})
+        print -P "$c %{$fg[$c]%}$c%{$reset_color%}"
+        print -P "$c %{$fg[$c]%}%B$c%b%{$reset_color%}"
+    end
+
+    foreach c (${(k)bg})
+        print -P "$c %{$bg[$c]%}$c%{$reset_color%}"
+    end
+}
+
+function get_rprompt() {
+    echo "$(git_branch_prompt)"
+    #echo $RPROMPT_CORE
+}
+
+PROMPT='$(get_prompt)'
+RPROMPT='$(get_rprompt)'
+
+alias ws=cd_brazil_workspace
+alias pak=cd_brazil_package
+
+alias g2s2na='/apollo/env/iopmtools/bin/g2s2 $* -u http://g2s2-regional-repo-na.amazon.com/'
+alias g2s2g='/apollo/env/iopmtools/bin/g2s2 $* -u http://g2s2-repo-author-na.amazon.com/'
+alias g2s2eug='/apollo/env/iopmtools/bin/g2s2 $* -u http://g2s2-cache-eu.amazon.com/'
+alias g2s2eu='/apollo/env/iopmtools/bin/g2s2 $* -u http://g2s2-regional-repo-eu.amazon.com/'
+
+######################
+###    COMPLETION    ##
+#######################
+
+setopt CORRECT      # command CORRECTION
+
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Fuzzy matching of completions for when you mistype them
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+#zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-z}={A-Z} r:|=*' 'm:{a-zA-Z}={A-Za-z} l:|=* r:|=*'
+
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+#zstyle ':completion:*' matcher-list '+m:{a-z}={A-Z} r:|[._-]=** r:|=**' '' '' \
+#    '+m:{a-z}={A-Z} r:|[._-]=** r:|=**'
+
+# match uppercase from lowercase
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}'
+
+# allow one error for every three characters typed in approximate completer
+# zstyle -e ':completion:*:approximate:*' max-errors \
+#    'reply=( $(( ($#PREFIX+$#SUFFIX)/2 )) numeric )'
+
+# list of completers to use
+#zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+     
+# insert all expansions for expand completer
+#zstyle ':completion:*:expand:*' tag-order all-expansions
