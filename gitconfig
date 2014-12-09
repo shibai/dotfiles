@@ -4,10 +4,10 @@
 [push]
 	default = current
 [core]
-	pager = less -R
+	pager = less -FMRiX
 	excludesfile = ~/.gitignore_global
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --format=format:'%C(yellow)%h%Creset %Cred%an%Creset %s' -5
 	co = checkout
 	sq = commit --amend --no-edit
 	sqa = commit -a --amend --no-edit
