@@ -48,6 +48,11 @@ bindkey '\eOF'    end-of-line        # gnome-terminal
 
 alias psgrep="ps aux | grep -v 'grep' | grep "
 alias exist="echo 'Do I really need to be told to exist?\nI choose not to. Exiting in 3...';sleep 1;echo '2...';sleep 1;echo '1...';sleep 1;echo 'Goodbye cruel world';exit"
+alias loglist="ls | perl -pe 's/(.*?)\..*/$1/g' | uniq"
+alias ff="clear; tail -fn0"
+alias svi='sudo -E vi'
+alias pyserv='python -m SimpleHTTPServer'
+alias please='sudo'
 
 function sgrep() {
         grep -ir "$1" . | grep -v -e 'build' -e '.git' -e '^Binary'
@@ -64,17 +69,14 @@ function projbranch() {
     done
 }
 
-alias loglist="ls | perl -pe 's/(.*?)\..*/$1/g' | uniq"
-
-alias ff="clear; tail -fn0"
-
-alias svi='sudo -E vi'
-
-alias pyserv='python -m SimpleHTTPServer'
 
 # Tabname is always handy
 tabname () {
 	printf "\e]1;$1\a"
+}
+
+psearch () {
+    ps aux | grep -i $1 | grep -v 'grep'
 }
 
 # make pushd and popd work properly (i.e. silently)
