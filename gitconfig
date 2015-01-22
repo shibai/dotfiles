@@ -2,7 +2,7 @@
 	name = Jack Jackson
 	email = jackjack@amazon.com
 [push]
-	default = current
+	default = upstream
 [core]
 	pager = less -FMRiX
 	excludesfile = ~/.gitignore_global
@@ -16,3 +16,6 @@
 	rebase = true
 [color]
 	ui = auto
+[amazon]
+	append-cr-url = true
+	pull-request-by-default = true
