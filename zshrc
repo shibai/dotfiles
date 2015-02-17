@@ -46,7 +46,7 @@ bindkey '\e[4~'   end-of-line        # Linux console
 bindkey '\e[F'    end-of-line        # xterm
 bindkey '\eOF'    end-of-line        # gnome-terminal
 
-alias psgrep="ps aux | grep -v 'grep' | grep "
+alias psgrep="ps aux | grep -v 'grep' | grep -i "
 alias exist="echo 'Do I really need to be told to exist?\nI choose not to. Exiting in 3...';sleep 1;echo '2...';sleep 1;echo '1...';sleep 1;echo 'Goodbye cruel world';exit"
 alias loglist="ls | perl -pe 's/(.*?)\..*/$1/g' | uniq"
 alias ff="clear; tail -fn0"
