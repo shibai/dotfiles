@@ -47,6 +47,9 @@ bindkey '\e[F'    end-of-line        # xterm
 bindkey '\eOF'    end-of-line        # gnome-terminal
 
 alias psgrep="ps aux | grep -v 'grep' | grep -i "
+function pskill() {
+    psgrep $1 | perl -pe 's/\S*\s*(\S*).*/$1/' | xargs kill -9
+}
 alias exist="echo 'Do I really need to be told to exist?\nI choose not to. Exiting in 3...';sleep 1;echo '2...';sleep 1;echo '1...';sleep 1;echo 'Goodbye cruel world';exit"
 alias loglist="ls | perl -pe 's/(.*?)\..*/$1/g' | uniq"
 alias ff="clear; tail -fn0"
