@@ -57,6 +57,10 @@ alias svi='sudo -E vi'
 alias pyserv='python -m SimpleHTTPServer'
 alias please='sudo'
 
+function vif() {
+    vi `find . -iname "*$1*"`
+}
+
 function sgrep() {
         grep -ir "$1" . | grep -v -e 'build' -e '.git' -e '^Binary'
 }
