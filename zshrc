@@ -56,6 +56,7 @@ alias ff="clear; tail -fn0"
 alias svi='sudo -E vi'
 alias pyserv='python -m SimpleHTTPServer'
 alias please='sudo'
+alias grhh='git reset --hard HEAD'
 
 function vif() {
     vi `find . -iname "*$1*"`
