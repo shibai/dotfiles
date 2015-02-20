@@ -57,6 +57,14 @@ alias bbcc="brazil-build copy-configuration"
 alias bbtia="brazil-build test-integration-assert"
 alias bbap="brazil-build apollo-pkg"
 alias sts="cd build/brazil-unit-tests; python -m SimpleHTTPServer 8123; cd ../.."
+alias stis="cd build/brazil-integ-tests; python -m SimpleHTTPServer 8888; cd ../.."
+alias post-review="post-review --target-group=dv-purchasing"
+
+#jruby aliases
+alias jruby='$(brazil-bootstrap)/jruby1.7.x/dist/bin/jruby'
+alias jrake='$(brazil-bootstrap)/jruby1.7.x/dist/bin/rake'
+alias jirb='$(brazil-bootstrap)/jruby1.7.x/dist/bin/irb'
+alias jrails='$(brazil-bootstrap)/jruby1.7.x/dist/bin/jruby $(brazil-bootstrap)/jruby1.7.x/ruby/gems/shared/bin/rails'
 
 alias python='/apollo/env/envImprovement/bin/python'
 
@@ -81,5 +89,7 @@ alias ssha="echo '\n\nYou are already on your dev box, you massive idiot\n\n'"
 alias portscan="sudo netstat -tulpn | grep -i "
 
 alias rebase="git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty vi \"$@\"' placeholder && git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty git add \"$@\"' placeholder && git rebase --continue"
+
+alias cdup="cd $(findup 'Config')"
 
 cd /workspace/jackjack
