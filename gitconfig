@@ -12,6 +12,7 @@
 	sq = commit --amend --no-edit
 	sqa = commit -a --amend --no-edit
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    hb = log --graph --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --abbrev-commit --date=relative --branches
 [pull]
 	rebase = true
 [color]
