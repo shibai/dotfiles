@@ -59,6 +59,7 @@ alias bbtia="brazil-build test-integration-assert"
 alias bbap="brazil-build apollo-pkg"
 alias sts="cd build/brazil-unit-tests; python -m SimpleHTTPServer 8123; cd ../.."
 alias stis="cd build/brazil-integ-tests; python -m SimpleHTTPServer 8888; cd ../.."
+alias chks="cd build/brazil-documentation/checkstyle; python -m SimpleHTTPServer 8888; cd ../../.."
 alias post-review="post-review --target-group=dv-purchasing"
 alias gcr="git reset --hard HEAD; bb clean && bb release"
 
