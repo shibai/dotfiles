@@ -53,12 +53,14 @@ alias bwup="brazil ws use -p"
 alias bb="brazil-build"
 alias bbs="brazil-build server"
 alias bbc="brazil-build clean"
+alias bbcr="brazil-build clean && brazil-build release"
 alias bbcc="brazil-build copy-configuration"
 alias bbtia="brazil-build test-integration-assert"
 alias bbap="brazil-build apollo-pkg"
 alias sts="cd build/brazil-unit-tests; python -m SimpleHTTPServer 8123; cd ../.."
 alias stis="cd build/brazil-integ-tests; python -m SimpleHTTPServer 8888; cd ../.."
 alias post-review="post-review --target-group=dv-purchasing"
+alias gcr="git reset --hard HEAD; bb clean && bb release"
 
 #jruby aliases
 alias jruby='$(brazil-bootstrap)/jruby1.7.x/dist/bin/jruby'
