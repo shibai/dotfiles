@@ -32,5 +32,43 @@ else
     fi
 fi
 
+function pat { #pushAndTest
+  currentBranchName=$(git symbolic-ref HEAD 2>/dev/null | perl -pe 's:refs/heads/(.*):$1:')
+  if [[ -z $currentBranchName ]] {
+    echo "Can't do nothing if you're not on a branch, champ"
+    return
+  }
+
+  upstreamInfo=$(git rev-parse --symbolic-full-name --abbrev-ref @{u})
+  upstreamArray=("${(@s:/:)upstreamInfo}")
+  upstreamRepoName=${upstreamArray[1]}
+  upstreamBranchName=${upstreamArray[2]} #Used for checking that the upstream repo has the correct branch checked out
+
+  if [[ -z $upstreamRepoName ]] {
+    echo "We seek the upstream.\nBut it is undetermined.\nRefrigerator."
+    return
+  }
+  if [[ $upstreamRepoName == "origin" ]] {
+    echo "Woah there, sparky! You're trying to use this function on a branch tracking origin. You probably don't want to do that."
+    return;
+  }
+
+  git commit -a --amend --no-edit # "Squash" your changes into the latest commit
+  git push -f # Really really push. For realsies.
+  remoteUrl=$(git config --get remote.$upstreamRepoName.url | perl -pe 's/^.*?:\/\/(.*)/$1/') # Sometimes git will prepend "ssh://" to remote urls. Sometimes it won't. How exciting!
+  remoteUrlArray=("${(@s/:/)remoteUrl}") # Split the remoteUrl into host and path
+
+  portNumber=$1
+  if [[ -z $portNumber ]] {
+    portNumber="1729" # it is a very interesting number
+  }
+  ssh -t ${remoteUrlArray[1]} "cd ${remoteUrlArray[2]}; actualCheckedBranch=\$(git symbolic-ref HEAD 2>/dev/null | perl -pe 's:refs/heads/::'); if [[ ! \$actualCheckedBranch == $upstreamBranchName ]] { echo \"Repo has wrong branch checked out, found '\$actualCheckedBranch' but expected '$upstreamBranchName'. Dying horribly\"} else { git reset --hard HEAD; brazil-build test || (cd build/brazil-unit-tests; python -m SimpleHTTPServer $portNumber)}"
+}
+
+function gnb() { #Git new-branch
+  git fetch dev;
+  git checkout --track dev/$1
+} 
+
 
 source ~/.env/zshrc
