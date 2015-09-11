@@ -57,6 +57,8 @@ alias svi='sudo -E vi'
 alias pyserv='python -m SimpleHTTPServer'
 alias please='sudo'
 alias grhh='git reset --hard HEAD'
+alias grup='git reset --hard @{u}'
+alias sqp='git sqa; git push -f'
 
 function vif() {
     vi `find . -iname "*$1*"`
