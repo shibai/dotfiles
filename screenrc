@@ -1,0 +1,33 @@
+altscreen on
+term screen-256color
+################
+# xterm tweaks
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+#defbce "on"
+
+# From Ioannis
+termcapinfo xterm* ti@:te@
+
+defscrollback 100000
+
+################
+# Allow tab change with Ctrl-Left/Right
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
+# Tab change with F11/F12 (NOT F1/F2!)
+bindkey -k F1 prev
+bindkey -k F2 next
+
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+#screen, with the time and date and with the current window highlighted                                                                            
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d-%m %{W}%c %{g}]'
+
+################
+# Change escape key to Ctrl-B to allow Ctrl-A for beginning-of-line
+escape ^Bb
+
+################
+# Disable splash screen
+startup_message off

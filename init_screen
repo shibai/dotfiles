@@ -1,0 +1,10 @@
+if [[ $STY = '' ]] then
+    echo "Start screen session?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) screen -DR; exit;;
+            No ) break;;
+        esac
+    done
+;
+fi

@@ -60,7 +60,8 @@ alias bbap="brazil-build apollo-pkg"
 alias sts="cd build/brazil-unit-tests; python -m SimpleHTTPServer 8123; cd ../.."
 alias stis="cd build/brazil-integ-tests; python -m SimpleHTTPServer 8888; cd ../.."
 alias chks="cd build/brazil-documentation/checkstyle; python -m SimpleHTTPServer 8888; cd ../../.."
-alias post-review="post-review --target-group=dv-purchasing"
+alias fbgs="cd build/brazil-documentation/findbugs; python -m SimpleHTTPServer 8889; cd ../../.."
+alias post-review='post-review --target-group=dv-purchasing --random-reviewers=dv-purchasing'
 alias gcr="git reset --hard HEAD; bb clean && bb release"
 
 #jruby aliases
@@ -96,3 +97,5 @@ alias rebase="git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</de
 alias cdup='cd `findup Config`'
 
 cd /workspace/jackjack
+
+source ~/init_screen
