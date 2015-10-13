@@ -4,6 +4,7 @@ alias bwup='brazil ws --use -p'
 alias bbtia='brazil-build test-integration-assert'
 alias sts='open build/brazil-unit-tests/index.html'
 alias stis='open build/brazil-integ-tests/index.html'
+alias chks='open build/brazil-documentation/checkstyle/checkstyle_report.html'
 alias post-review='post-review --target-group=dv-purchasing -o'
 
 export PATH="/apollo/env/ruby193/bin:/apollo/env/SDETools/bin:$PATH:/Users/jackjack/bin:/Users/jackjack/development/sbt/bin"
