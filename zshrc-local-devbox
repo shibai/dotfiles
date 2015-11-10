@@ -95,8 +95,6 @@ alias portscan="sudo netstat -tulpn | grep -i "
 
 alias rebase="git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty vi \"$@\"' placeholder && git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty git add \"$@\"' placeholder && git rebase --continue"
 
-alias cdup='cd `findup Config`'
-
 cd /workspace/jackjack
 
 source ~/init_screen

@@ -7,6 +7,7 @@ alias stis='open build/brazil-integ-tests/index.html'
 alias chks='open build/brazil-documentation/checkstyle/checkstyle_report.html'
 alias fbgs='open build/brazil-documentation/findbugs/findbugs_report.html'
 alias post-review='post-review --target-group=dv-purchasing -o'
+alias cdup='cd `findup Config`'
 
 export PATH="/apollo/env/ruby193/bin:/apollo/env/SDETools/bin:$PATH:/Users/jackjack/bin:/Users/jackjack/development/sbt/bin"
 
