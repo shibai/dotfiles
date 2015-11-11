@@ -58,6 +58,7 @@ alias pyserv='python -m SimpleHTTPServer'
 alias please='sudo'
 alias grhh='git reset --hard HEAD'
 alias grup='git reset --hard @{u}'
+alias guom='git branch --set-upstream-to origin/mainline'
 alias sqp='git sqa; git push -f'
 
 function vif() {
