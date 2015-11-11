@@ -20,3 +20,8 @@ velocity.log
 src/com/amazon/video/cdp/servlets/API-methods.xml
 src/com/amazon/video/cdp/servlets/API.xml
 src/com/amazon/video/cdp/servlets/index.html
+
+gradlew
+gradle/
+gradlew.bat
+out/
