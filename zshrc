@@ -60,6 +60,7 @@ alias grhh='git reset --hard HEAD'
 alias grup='git reset --hard @{u}'
 alias guom='git branch --set-upstream-to origin/mainline'
 alias sqp='git sqa; git push -f'
+alias vi='vi -O'
 
 function vif() {
     vi `find . -iname "*$1*"`
