@@ -20,3 +20,6 @@ fixdel
 
 " Remap Shift-Enter to ESC, allowing easier exit from insert mode
 :inoremap <S-CR> <Esc>
+
+" Auto-close xml/html tags
+"iabbrev </ </<C-X><C-O>
