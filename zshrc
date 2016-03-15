@@ -104,7 +104,12 @@ psearch () {
 
 
 echo "\n\nHERE IS A PICTURE OF A CAT:\n"
-cat-art
+# http://stackoverflow.com/a/677212/1040915
+if hash cat-art 2>/dev/null; then
+  cat-art
+else
+  echo "You do not have cat-art installed, you heathen!"
+fi
 echo ""
 
 # Work on this shortcut: git status --porcelain | sed -ne 's/^ M //p' | tr '\n' '\0' | xargs -0 vi
