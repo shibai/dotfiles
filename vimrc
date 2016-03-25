@@ -1,4 +1,7 @@
-source ~/.vimrc-envImprove
+let s:host_vimrc = $HOME . '/.vimrc-envImprove'
+if filereadable(s:host_vimrc)
+  execute 'source ' . s:host_vimrc
+endif
 set nocompatible
 set number
 set backspace=indent,eol,start
