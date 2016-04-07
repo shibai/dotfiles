@@ -17,9 +17,6 @@ export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export LD_LIBRARY_PATH=$ORACLE_HOME
 export JAVA_HOME=`/usr/libexec/java_home`
 
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-
 # http://stackoverflow.com/a/5257398
 DAY_OF_WEEK=$(date '+%u')
 if [ $DAY_OF_WEEK -lt 1 ] || [ $DAY_OF_WEEK -gt 5 ]
