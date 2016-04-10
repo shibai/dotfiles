@@ -16,6 +16,7 @@ export ORACLE_HOME="/Users/jackjack/Development/oracle/instantclient_11_2_2"
 export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export LD_LIBRARY_PATH=$ORACLE_HOME
 export JAVA_HOME=`/usr/libexec/java_home`
+eval "$(docker-machine env default)"
 
 # http://stackoverflow.com/a/5257398
 DAY_OF_WEEK=$(date '+%u')
