@@ -1,4 +1,4 @@
-alias ssha='echo -e "\033]50;SetProfile=Solarized Dark\a";ssh jackjack-2.desktop.amazon.com;echo -e "\033]50;SetProfile=\a";'
+alias ssha='echo -e "\033]50;SetProfile=Solarized Dark\a";ssh dev-cloud;echo -e "\033]50;SetProfile=\a";'
 alias sshpi='echo -e "\033]50;SetProfile=Solarized Light\a";ssh pi;echo -e "\033]50;SetProfile=\a";'
 alias sts='open build/brazil-unit-tests/index.html'
 alias stis='open build/brazil-integ-tests/index.html'
