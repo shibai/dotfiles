@@ -65,6 +65,7 @@ alias sqp='git sqa; git push -f'
 alias vi='vi -O'
 alias bwup='brazil ws --use -p'
 alias bbtia='brazil-build test-integration-assert'
+alias bcb='brazil-build clean && bb'
 alias cdup='cd `findup Config`'
 
 function vif() {
