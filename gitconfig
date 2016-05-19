@@ -9,6 +9,7 @@
 [alias]
 	lg = log --format=format:'%C(yellow)%h%Creset %Cred%an%Creset %s' -5
 	co = checkout
+    nb = checkout -t origin/mainline -b
 	sq = commit --amend --no-edit
 	sqa = commit -a --amend --no-edit
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
