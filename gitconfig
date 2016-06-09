@@ -6,6 +6,8 @@
 [core]
 	pager = less -FMRiX
 	excludesfile = ~/.gitignore_global
+    fileMode = false
+    autocrlf = input
 [alias]
 	lg = log --format=format:'%C(yellow)%h%Creset %Cred%an%Creset %s' -5
 	co = checkout
