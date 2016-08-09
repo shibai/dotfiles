@@ -7,7 +7,8 @@
 source ~/.zshrc-local
 
 #set timezone
-TZ=GB; export TZ;
+#TZ=GB; export TZ;
+TZ='America/Los_Angeles'; export TZ;
 
 autoload -U compinit
 compinit
