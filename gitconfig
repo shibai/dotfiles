@@ -25,3 +25,7 @@
 	pull-request-by-default = true
 [advice]
     statusHints = false
+[pack]
+	windowMemory = 100m
+	SizeLimit = 100m
+	threads = 1
