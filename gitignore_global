@@ -16,6 +16,7 @@ velocity.log
 *.log
 *.pyc
 *.swp
+tt*.*
 
 src/com/amazon/video/cdp/servlets/API-methods.xml
 src/com/amazon/video/cdp/servlets/API.xml

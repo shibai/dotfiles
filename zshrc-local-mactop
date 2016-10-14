@@ -4,12 +4,12 @@ alias sts='open build/brazil-unit-tests/index.html'
 alias stis='open build/brazil-integ-tests/index.html'
 alias chks='open build/brazil-documentation/checkstyle/checkstyle_report.html'
 alias fbgs='open build/brazil-documentation/findbugs/findbugs_report.html'
-alias post-review='post-review --target-group=avcp-taps --target-people=marmorga,jstania,arciszek,shibaili -o'
+alias post-review='post-review --target-group=avcp-taps -o'
 
-export PATH="/apollo/env/ruby193/bin:/apollo/env/SDETools/bin:$PATH:/Users/jackjack/bin:/Users/jackjack/development/sbt/bin"
+export PATH="/apollo/env/ruby193/bin:/apollo/env/SDETools/bin:/usr/local/bin:$PATH:/Users/shibaili/bin:/Users/shibaili/development/sbt/bin"
 
 export ORACLE_VERSION=11.2.2
-export ORACLE_HOME="/Users/jackjack/Development/oracle/instantclient_11_2_2"
+export ORACLE_HOME="/Users/shibaili/Development/oracle/instantclient_11_2_2"
 export DYLD_LIBRARY_PATH=$ORACLE_HOME
 export LD_LIBRARY_PATH=$ORACLE_HOME
 export JAVA_HOME=`/usr/libexec/java_home`

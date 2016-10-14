@@ -24,7 +24,7 @@ setopt NO_BEEP
 autoload -U colors
 colors
 
-export PATH=/apollo/env/eclipse-4.2/eclipse:/home/jackjack/.env/bin:/home/jackjack/bin:$PATH:
+export PATH=/apollo/env/eclipse-4.2/eclipse:/home/shibaili/.env/bin:/home/shibaili/bin:$PATH:
 #/rhel5pdi/apollo/package/local_1/Linux-2.6c2.5-x86_64/Python/Python-151.0-0/lib/python2.6/site-packages
 export PYTHONPATH=~/bin/pythonScripts
 
@@ -95,6 +95,6 @@ alias portscan="sudo netstat -tulpn | grep -i "
 
 alias rebase="git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty vi \"$@\"' placeholder && git status --porcelain | sed -ne 's/^UU //p' | xargs bash -c '</dev/tty git add \"$@\"' placeholder && git rebase --continue"
 
-cd /workspace/jackjack
+cd /workspace/shibaili
 
 source ~/init_screen
