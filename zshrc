@@ -122,3 +122,4 @@ echo ""
 # Work on this shortcut: git status --porcelain | sed -ne 's/^ M //p' | tr '\n' '\0' | xargs -0 vi
 
 source ~/.env/zshrc
+export PATH=$BRAZIL_CLI_BIN:$PATH

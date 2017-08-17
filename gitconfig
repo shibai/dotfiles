@@ -29,3 +29,11 @@
 	windowMemory = 100m
 	SizeLimit = 100m
 	threads = 1
+[merge]
+     tool = vscode
+[mergetool "vscode"]
+     cmd = code --wait $MERGED
+[diff]
+     tool = default-difftool
+[difftool "default-difftool"]
+     cmd = code --wait --diff $LOCAL $REMOTE

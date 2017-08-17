@@ -4,7 +4,7 @@ alias sts='open build/brazil-unit-tests/index.html'
 alias stis='open build/brazil-integ-tests/index.html'
 alias chks='open build/brazil-documentation/checkstyle/checkstyle_report.html'
 alias fbgs='open build/brazil-documentation/findbugs/findbugs_report.html'
-alias post-review='post-review --target-group=avcp-taps -o'
+alias post-review='post-review --target-group=searchservices-eng -o'
 
 export PATH="/apollo/env/ruby193/bin:/apollo/env/SDETools/bin:/usr/local/bin:$PATH:/Users/shibaili/bin:/Users/shibaili/development/sbt/bin"
 
